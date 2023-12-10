@@ -1,0 +1,25 @@
+include ./layouts/layout
+
+//- TODO main 여백 맞추기
+
+block content
+  - var introducingMySelfContents = ["Hello, my name is Jina Lee, and I'm from South Korea. I stayed in Bournemouth for six months and then moved to London. Previously, I worked as a front-end developer for 2 years and 7 months in Korea.","During my time in this role, we regularly discussed the main points of our projects and collectively decided on the appropriate libraries or frameworks to use. This experience taught me how to effectively gather opinions. Additionally, we often had to quickly acquire new skills, and I gained more experience than other junior developers as a result.", "After a year and a half, I was promoted to a team leader position. Before leaving the job, I was responsible for liaising with outsourcing companies and managing colleagues.", "Now, I am seeking new challenges in the UK. Although adjusting to a new environment can be challenging, I believe that these challenges make me stronger."]
+  main.container.mx-auto.my-2.p-2
+    div 
+      div.text-right.flex.flex-inline.items-center.gap-2.justify-end
+        div.w-6.h-6.bg-mail.bg-contain.bg-no-repeat.bg-center(class="md:w-8")
+        strong.text-xs jina2ee1011@gmail.com
+      h2.mt-4.mb-2.title.text-primary.text-4xl.text-center.font-bold Optimistic, Quick-witted, Responsible
+      div.pb-2.px-4.text-center.text-base
+        each content in introducingMySelfContents
+          p.py-1=content
+    div.p-4.my-2.bg-secondary.rounded-md(class="md:my-4 lg:my-6") 
+      strong.title.text-primary.text-2xl - experience skills 
+        ul.flex.flex-wrap.flex-inline.gap-3.p-2(class="md:py-4")
+          img.h-8(src="/assets/Icon_pug.svg")
+          img.h-8(src="/assets/Icon_typescript.svg")
+          img.h-8(src="/assets/Icon_svelte.svg")
+          img.h-8(src="/assets/Icon_nextjs.svg")
+          img.h-8(src="/assets/Icon_tailwind.svg")
+          
+      

@@ -1,0 +1,721 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Hind:400,500,600,700|Martel:200&display=swap');
+
+
+/* -------------------- reset -------------------- */
+@font-face{
+	font-family: GmarketSansTTF;
+	src:url(../fonts/GmarketSansTTF/GmarketSansTTFBold.ttf),
+		url(../fonts/GmarketSansTTF/GmarketSansTTFLight.ttf),
+		url(../fonts/GmarketSansTTF/GmarketSansTTFMedium.ttf);
+	font-weight: bold,normal,Medium;
+}
+
+body {
+	font:normal 12px 'Hind', serif, sans-serif,'Bebas Neue', cursive, GmarketSansTTF, 'Martel' ;
+	line-height:1.3;
+	color:black;
+	background-color:#fff;
+	margin:0;
+	padding:0;
+}
+h1, h2, h3, h4, h5, h6 {font-size:1em;}
+h1, h2, h3, h4, h5, h6, div, p, dl, dt, dd, ul, ol, li, form, fieldset, blockquote, address, table, thead, tbody, tfoot, tr, td, caption {
+	margin:0;
+	padding:0;
+}
+ul, ol {list-style: none;}
+a {text-decoration: none; color:black; letter-spacing: 0; }
+img {vertical-align: top; width: 100%;}
+em {font-style: normal}
+
+
+/* -------------------- layout -------------------- */
+.wrap {width: 100%; background-color: #F4F4F4;}
+header {width:100%; height: 440px; margin: 0 auto; background-color: #F4F4F4;} 
+footer {width:100%; background-color: black;}
+
+/* -------------------- common -------------------- */
+.wrap {
+	position: relative;
+	overflow: hidden;
+}
+.clear:after {
+	display: block;
+	clear: both;
+	content: '';
+}
+
+/* -------------------- header -------------------- */
+header {
+	position: fixed;
+	z-index: 500;
+	height: 0;
+	transition: all 0.5s ease;
+}
+header.on {
+	height: 440px;
+	transition: all 0.5s ease;
+}
+header .inner {
+	display: none;
+	margin-top: 175px;
+	text-align: center;
+}
+header.on .inner {
+	display: block;
+}
+header nav {
+	display: inline-block;
+	width: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+	padding: 0 65px;
+	margin-bottom: 75px;
+}
+header  nav > a {
+    position: relative;
+    float: left;
+	width: 20%;
+    box-sizing: border-box;
+    height: 90px;
+    padding: 0 10px;
+}
+header  nav > a:after {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 48px;
+	margin: 0 auto;
+	border-bottom: 1px solid black;
+	content:'';
+}
+header  nav > a > * {
+	display: block;
+	text-align: center;
+}
+header  nav > a > strong {
+	margin-bottom: 5px;
+	font-size: 30px;
+    font-family: GmarketSansTTF;
+    letter-spacing: -2px
+}
+header  nav > a:hover > strong{
+	color:#EA178C;
+}
+header nav > a > em {
+	font-size: 14px;
+	font-family: 'Martel';
+}
+
+.header_bottom > span {
+	font-size: 13px;
+	font-family: 'Martel';
+}
+.header_bottom > a {
+	font-weight: bold;
+	font-size: 17px;
+}
+.header_bottom > a:hover {
+	color:#EA178C;
+}
+.header_bottom > .period {
+	color:#EA178C;
+}
+
+
+button {
+	position: fixed;
+	z-index: 500;
+	top: 50px;
+	right: 0;
+	left: 0;
+	width: 74px;
+	height: 74px;
+	margin: 0 auto;
+	border: none;
+}
+button:hover {
+	background-color: black;
+}
+button:hover a{
+	color:white;
+}
+button a {
+	font-weight: 900;
+	font-size: 3em;
+	font-family: 'Hind';
+}
+button.stop {
+	background-color: transparent;
+}
+button.pink a {
+	color:#EA178C;
+}
+button.pink:hover {
+	background-color: #EA178C;
+}
+button.pink:hover a{
+	color: white;
+}
+button.stop:hover {
+	background-color: transparent;
+}
+button.pink.stop a{
+	color:#EA178C;
+	letter-spacing: 2px;
+}
+
+.fix_collection {
+    position: relative;
+    top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index:400;
+	background-color: transparent;
+}
+.fix_collection > .fix {
+	position: fixed;
+	background-color: transparent;
+	transition: all 0.5s ease;
+}
+.fix_collection.on > .fix {
+	transition: all 0.5s ease;
+	background-color: #F4F4F4;
+}
+.fix_collection > .fix.top {
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 0px;
+}
+.fix_collection.on > .fix.top {
+	height: 90px;
+}
+.fix_collection > .fix.left {
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 0px;
+}
+.fix_collection.on > .fix.left {
+	width: 50px;
+}
+.fix_collection > .fix.right {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 0px;
+}
+.fix_collection.on > .fix.right {
+	width: 50px;
+}
+.fix_collection > .fix.bottom {
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 0px;
+}
+.fix_collection.on > .fix.bottom {
+	height: 50px;
+}
+
+/* -------------------- contents -------------------- */
+.contents {
+	position: relative;
+	z-index: 300;
+	overflow: hidden;
+	width: 100%;
+}
+.contents > div {
+	position: absolute;
+	bottom: 0;
+	width: 100%;;
+	height: 500px;
+	background-color: transparent;
+	transition: all 1s ease;
+}
+.contents > div.on {
+	top: 0;
+	overflow: hidden;
+	transition: all 1s ease;
+}
+
+.section.white, .section.white a {
+	color:white;
+}
+.section.black, .section.black a{
+	color:black;
+}
+
+.contents > .main {
+	box-sizing: border-box;
+	background-color: white;
+}
+.contents > .main:after{
+	display: inline-block;
+	position: absolute;
+	bottom: 0;
+	left: calc(50% - 1px);
+	height: 38px;
+	border-left: 1px solid black;
+	content: '';
+}
+.contents > .main > h2 {
+	line-height: 100vh;
+	text-align: center;
+	font-size: 22em;
+    font-family: GmarketSansTTF;
+	letter-spacing: -25px;
+}
+.contents > .main > a {
+    position: absolute;
+    right: 0;
+    bottom: 65px;
+	left: calc(50% - 58.6px); /*50% 에 본인 넓이의 반을 뺀다.*/
+    font-size: 16px;
+    font-family: 'Martel';
+    margin: 0 auto;
+    opacity: 0.8;
+}
+
+.contents > .main > a:hover {
+	color:#EA178C;
+}
+
+.contents em {
+	display: block;
+	border: 1px solid black;
+	text-align: center;
+}
+.contents .section {
+	margin-top:20vh;	
+}
+.contents .section .text {
+	display: inline-block;
+	overflow: hidden;
+	width: 54%;
+	box-sizing: border-box;
+	height: calc(100% - 20vh);
+	padding-left: 12.777777%;
+	/* 368/2880 */
+	font-family: sans-serif;
+	line-height: 1.2;
+}
+.contents .section span {
+	font-size: 15px;
+	font-family: GmarketSansTTF;
+}
+.contents .section .text h2 {
+	position: relative;
+	padding: 10px 0 35px;
+}
+.contents .section .text h2 a{
+    font-family: GmarketSansTTF;
+	font-size: 70px;
+    letter-spacing: -4px;
+}
+.contents .section .text h2:after{
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 65px;
+	border-bottom: 1px solid white;
+	content:'';
+}
+.contents .section.black .text h2:after{
+	border-bottom: 1px solid black;
+}
+.contents .section .text p {
+	padding-top: 35px;
+}
+.contents .section .text p a{
+	display: inline-block;
+	width: 77.857142%;
+	font-size: 17.5px;
+    line-height: 200%;
+    font-family: 'Martel';
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+}
+
+.line {
+    display: block;
+    position: relative;
+	left: 38px;
+	width: 100%;
+    margin-top: 20vh;
+    font-size: 15px;
+    font-family: GmarketSansTTF;
+}
+.line:after {
+    display: block;
+    position: absolute;
+    top: 7px;
+    left: 30px;
+	width: 5.571847%;
+	/* 57/1023 */
+	border-top: 1px solid;
+	content: '';
+}
+.line.white, .line.white:after {
+	color:white;
+}
+
+/* -------------------- bg img -------------------- */
+.bg_img picture {
+	display: block;
+	position: absolute;
+	top: 0;
+	opacity: 0;
+	transition: all 1s ease;
+}
+.bg_img picture  > *{
+	width: calc(100vw + 15px);
+	height: 100vh;
+    object-fit: cover;
+}
+.bg_img picture.on {
+	top: 0;
+	transition: all 1s ease;
+	opacity: 1;
+}
+
+
+
+/* -------------------- footer -------------------- */
+footer{
+	position: absolute;
+	bottom: 0;
+	box-sizing: border-box;
+	height: 0;
+	font-size: 0;
+}
+footer.on{
+	position: absolute;
+	bottom: 0;
+	box-sizing: border-box;
+}
+footer.on .inner {
+	width: calc(101% - 12.806539% - 11.44141%);
+	height: 73px;
+	padding-top:65px;
+	padding-right: 11.444141%;
+	/* 126/1101 */
+	padding-bottom: 80px;
+	padding-left: 12.806539%;
+	/* 141/1101 */
+	background-color: black;
+}
+footer > * {
+	color: white;
+}
+footer a {
+	color: white;
+}
+footer div .inner_left {
+	float: left;
+	color:#ffffff;
+}
+footer.on div .inner_left > h1 {
+	position: relative;
+	margin-right: 64px;
+	font-size: 40px;
+	font-family: "Bebas Neue";
+	letter-spacing: 3px;
+}
+footer.on div .inner_left > h1:after {
+	display: block;
+	position: absolute;
+	top: 6px;
+	right: -32px;
+	height: 40px;
+	border-left: 1px solid #888888;
+	content: '';
+}
+footer.on div .inner_left > em {
+	margin-top: 14px;
+	font-size: 15px;
+	font-family: GmarketSansTTF;
+	letter-spacing: -0.5px;
+}
+footer div .inner_left > * {
+	float: left;
+}
+
+footer div .inner_right {
+	float: right;
+	
+}
+footer.on div .inner_right > a, footer.on div .inner_right > span{
+	display: block;
+	color:#888888;
+	font-size: 13px;
+	line-height: 1.7;
+	font-family: 'Martel';
+	text-align: right;
+}
+footer.on div .inner_right > span{
+	padding-top: 15px;
+}
+footer.on div .inner_right > span > a{
+	color:#888888;
+}
+footer.on .inner_right a:hover {
+	color:#c8c8c8;
+}
+footer.on .footer_nav > a {
+	margin-right: 17px;
+	color:#888888;
+	font-size: 12px;
+	font-family: GmarketSansTTF;
+}
+
+footer.on .footer_nav a:last-child {
+	margin-right: 0px;
+}
+ 
+
+/* -------------------- 미디어쿼리 -------------------- */
+/* 999이하*/
+@media screen and (max-width:999px) {
+	header nav > a > strong {
+		font-size: 28px;
+	}
+	header nav > a > em {
+		font-size: 13px;
+	}
+	.line:after {
+		left: 25px;
+		width: 3.033472%;
+		/* 29/956 */
+	}
+	.contents .section .text {
+		width:calc(50% + 72px);
+	}
+	.contents .section .text h2 a{
+		font-size:65px;
+	}
+	.contents .section .text p a {
+		width: 67.512690%;
+	}
+	footer.on .inner {
+		width: calc(100% - 8.583247%);
+		height: 134px;
+		padding-top: 120px;
+		padding-right: 0;
+		padding-bottom: 100px;
+		padding-left: 8.583247%;
+		/* 83/967 */
+	}
+	footer.on div .inner_left {
+		float: none;
+	}
+	footer.on div .inner_left > em {
+		font-size: 19px;
+	}
+	footer.on div .inner_left:after {
+		display: block;
+		clear: both;
+		content: '';
+	}
+	footer div .inner_right {
+		float: none;
+	}
+	footer.on div .inner_right > a, footer.on div .inner_right > span {
+		text-align: left;
+	}
+	footer .footer_nav {
+		padding-top: 10px;
+	}
+}/* 999이하 끝 */
+
+/* 938이하*/
+@media screen and (max-width:938px) {
+	.contents .section .text {
+		width: 61%;
+	}
+	.contents .section .text p a {
+		width: 67.512690%;
+		font-size: 17px;
+	}
+}/* 938이하 끝 */
+
+/* 767이하*/
+@media screen and (max-width:767px) {
+	header .inner {
+		margin-top: 70px;
+	}
+	header.on {
+		height: 100%;
+	}
+	header nav {
+		padding: 0 50px;
+		margin-bottom: 0;
+		line-height: 32px;
+	}
+	header nav > a {
+		display: block;
+		float: none;
+		overflow: hidden;
+		width: 100%;
+		height: auto;
+		padding: 0;
+	}
+	header nav > a:after {
+		bottom: 50%;
+		margin: 0;
+	}
+	header nav > a:nth-child(1):after{
+		left: 67px;
+		width: calc(100% - 200px);
+	}
+	header nav > a:nth-child(2):after{
+		left: 68px;
+		width: calc(100% - 233px);
+	}
+	header nav > a:nth-child(3):after{
+		left: 76px;
+		width: calc(100% - 188px);
+	}
+	header nav > a:nth-child(4):after{
+		left: 98px;
+		width: calc(100% - 226px);
+	}
+	header nav > a:nth-child(5):after{
+		left: 96px;
+		width: calc(100% - 214px);
+	}
+	header nav > a > strong {
+		float: left;
+		margin-bottom: 0;
+		font-size: 18px;
+		letter-spacing: 0px;
+	}
+	header nav > a > em {
+		float: right;
+		font-size: 17px;
+	}
+	.header_bottom > span {
+		font-size: 16px;
+	}
+	.header_bottom > a {
+		font-size: 19px;
+	}
+	button {
+		top: 25px;
+		width: 60px;
+		height: 60px;
+	}
+	 button.pink > a {
+		color: white;
+	} 
+	button.pink {
+		background-color: #EA178C;
+	}
+	.contents > .main > h2 {
+		font-size: 15em;
+		letter-spacing: -15px;
+	}	
+	.line {
+		left: 8vw;
+		font-size: 13px;
+	}
+	.line:after {
+		width: 8.823529%;
+		/* 66/748 */
+	}
+	.contents .section span {
+		font-size: 13px;
+	}
+	.contents .section .text {
+		width: 100%;
+		padding-left: 7vw;
+	}
+	.contents .section .text span {
+		margin-left: 20.013404%;
+	}
+	.contents .section .text h2 {
+		padding: 15px 0 ;
+	}
+	.contents .section .text h2:after {
+		width: 16.764705%;
+		/* 114/680 */
+	}
+	.contents .section .text h2 a {
+		font-size: 35px;
+		letter-spacing: -2px;
+	}
+	.contents .section .text p {
+		padding-top: 10px;
+	}
+	.contents .section .text p a{
+		width: 79.5714285%;
+		/* 517/658 */
+	}
+	footer.on .inner {
+		width: calc(100% - 13.583247%);
+		height: 159px;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		padding-left: 13.043478%;
+		/* 99/759 */
+	}
+	footer.on div .inner_left > h1 {
+		margin-right: 10vw;
+		font-size: 35px;
+	}
+	footer.on div .inner_left > h1:after {
+		top: 4px;
+		right: -5vw;
+		height: 33px;
+	}
+	footer.on div .inner_left > em {
+		margin-top: 10px;
+		font-size: 15px;;
+	}
+	footer.on div .inner_right > a, footer.on div .inner_right > span {
+		font-size: 12px;
+		line-height: 2;
+	}
+	footer.on div .inner_right > span > a {
+		display: block;
+	}
+}/* 767이하 끝 */
+
+/* 614이하*/
+@media screen and (max-width:614px) {
+	header.on {
+		height: 80%;
+	}
+	header .inner {
+		margin-top: 90px;
+	}
+	header nav {
+		margin-bottom: 15px;
+	}
+	header nav > a {
+		padding: 2.5vh 0;
+	}
+	.fix_collection.on > .fix.right {
+		width: 30px;
+	}
+	.fix_collection.on > .fix.left {
+		width: 30px;
+	}
+}/* 614이하 끝 */
+
+/* 524이하 */
+@media screen and (max-width:524px) {
+	.contents .section .text h2 a {
+		display: block;
+		width: 78.09090%;
+		/* 286/484 */
+	}
+	.contents .section .text p a{
+		width: 80.5714285%;
+	}
+}/* 524이하 끝 */
