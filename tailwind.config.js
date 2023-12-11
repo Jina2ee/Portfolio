@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./views/*.pug"],
+  content: ["./views/*.pug", "./views/layouts/*.pug"],
   theme: {
     extend: {
       colors: {
@@ -16,7 +16,15 @@ module.exports = {
         react: 'url("/assets/Icon_react.svg")',
         tailwind: 'url("/assets/Icon_tailwind.svg")',
         mail: 'url("/assets/Icon_mail.svg")',
-        // dapulja: 'url("/assets/Icon_mail.svg")',
+        dapulja: 'url("/assets/dapulja.svg")',
+        zoomon: 'url("/assets/zoomon.png")',
+        watcher: 'url("/assets/watcher.png")',
+        portfolio: 'url("/assets/portfolio.png")',
+        todolist: 'url("/assets/todolist.png")',
+        kakaobank: 'url("/assets/kakaobank.png")',
+        casetify: 'url("/assets/casetify.png")',
+        microsoft: 'url("/assets/microsoft.png")',
+        huge: 'url("/assets/huge.png")',
       },
     },
   },
