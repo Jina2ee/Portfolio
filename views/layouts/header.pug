@@ -3,9 +3,7 @@ mixin header(isHeader, page)
     div
       header.flex.w-screen.items-center.bg-secondary
         div.p-2.container.flex.mx-auto.justify-between.items-center.border-b-2.border-slate-200
-          //- a.flex(class="w-4" style={width: '2rem'})
-            //- img.mx-auto.my-0(src="/assets/main.svg" alt="main profile image" class="hover:grayscale-0") 
-          a.w-2(href="/")
+          a.w-10.h-10(href="/")
             img.mx-auto.my-0(src="/assets/main.svg" alt="main profile image" class="hover:grayscale-0")
           div.flex.gap-2
             - var navList = ["works", "about"]

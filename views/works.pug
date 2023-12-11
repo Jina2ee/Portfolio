@@ -2,6 +2,7 @@ include ./layouts/layout
 
 //- TODO main 여백 맞추기
 //- TODO 이미지가 백그라운드로 들어가서 어떤 이미지가 들어가도 사이즈가 동일하게끔
+//- TODO 배포 
 
 - 
   var works = [
@@ -73,11 +74,11 @@ include ./layouts/layout
 
 
 
-//- block content
+block content
   main.container.mx-auto.my-2.p-4
-    ul.grid.gap-3.grid-cols-1(class="md:grid-cols-2 lg:grid-cols-3")
+    ul.grid.gap-3.grid-cols-1.grid-rows-3(class="md:grid-cols-2 lg:grid-cols-3")
       for work in works
-        li.bg-secondary.rounded-lg.border-2.border-slate-200.overflow-hidden
+        li.grid.bg-secondary.rounded-lg.border-2.border-slate-200.overflow-hidden(style="grid-auto-rows: minmax(150px, auto)")
           div.overflow-hidden
             - 
               function checkToEnterTheSite(name){
@@ -93,9 +94,10 @@ include ./layouts/layout
             - var canMovingToSite = checkToEnterTheSite(work.name) 
               if canMovingToSite
                 a(href=`/assets/works/${work.name}/index.html`)
-                  img.my-0.mx-auto(src=work.src)
+                  img.w-full.my-0.mx-auto(src=work.src)
+                //- div.w-full.h-full.bg-cover.bg-no-repeat.bg-center(href=`/assets/works/${work.name}/index.html` class=`bg-${work.name.toLowerCase()}`)
               else
-                img.my-0.mx-auto(src=work.src)
+                img.w-full.my-0.mx-auto(src=work.src)
           div.p-2
             h2.title.text-xl=work.name
             p.text-xs.leading-4=work.desc
@@ -107,7 +109,7 @@ include ./layouts/layout
 
     
     
-block content
+//- block content
   main.container.mx-auto.my-2.p-2
     ul.grid.gap-3.grid-cols-2(class="lg:grid-cols-3")
       li.bg-secondary.rounded-lg.border-2.border-slate-200.overflow-hidden
