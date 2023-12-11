@@ -1,7 +1,8 @@
 include ./layouts/layout
-include ./layouts/footer
+include ./layouts/header
 
 block content
+  +header(false, "home")
   main#root.grid.grid-col-6.gap-1.bg-primary.bg-center.bg-cover.bg-main.bg-no-repeat.h-screen.text-white.items-center.p-2
     div
     div.img-container.row-span-2
@@ -9,6 +10,6 @@ block content
     h1.title.text-6xl.text-center JINA LEE
     strong.text-center.font-light Front-end web developer
     div.mx-auto.my-0
-      a(href="/works" class="hover:text-black hover:border-b-black").link-text.border-b.p-2.m-2 WORKS
-      a(href="/about" class="hover:text-black hover:border-b-black").link-text.border-b.p-2.m-2 ABOUT
+      a(href="/works.html" class="hover:text-black hover:border-b-black").link-text.border-b.p-2.m-2 WORKS
+      a(href="/about.html" class="hover:text-black hover:border-b-black").link-text.border-b.p-2.m-2 ABOUT
     span.text-center.italic.font-extralight.text-gray-300(class="text-[0.2rem]") This website serves as a personal portfolio and is not intended for commercial purposes. 
