@@ -10,14 +10,14 @@ include ./layouts/header
     {
       name: 'Dapulja',
       company: '@Insighter',
-      src: "/assets/dapulja.svg",
+      src: "/assets/dapulja.png",
       desc: "Quick downloading platform for students",
       skills: ["typescript", "nextjs"]
     },
     {
       name: 'Zoomon',
       company: '@Insighter',
-      src: "/assets/zoomon.svg",
+      src: "/assets/zoomon.png",
       desc: "Introducing Zoomon, the newly released NFT character on Insighter",
       skills: ["pug"]
     },
@@ -78,7 +78,7 @@ include ./layouts/header
 block content
   +header(true, "works")
   main.container.mx-auto.my-2.p-4
-    ul.grid.gap-3.grid-cols-1.grid-rows-3(class="md:grid-cols-2 lg:grid-cols-3")
+    ul.grid.gap-3.grid-cols-2.grid-rows-3(class="md:grid-cols-2 lg:grid-cols-3")
       for work in works
         li.grid.bg-secondary.rounded-lg.border-2.border-slate-200.overflow-hidden(style="grid-auto-rows: minmax(150px, auto)")
           div.overflow-hidden
@@ -116,7 +116,7 @@ block content
     ul.grid.gap-3.grid-cols-2(class="lg:grid-cols-3")
       li.bg-secondary.rounded-lg.border-2.border-slate-200.overflow-hidden
         div.overflow-hidden
-          img(src="/assets/dapulja.svg")
+          img(src="/assets/dapulja.png")
         div
           h2 Dapulja
           p Quick downloading platform for students
@@ -126,7 +126,7 @@ block content
             div.w-8.h-8.rounded-full.bg-next.bg-contain.bg-no-repeat.bg-center
       li.bg-secondary.rounded-lg.border-2.border-slate-200.overflow-hidden(class="h-80")
         div.h-44.overflow-hidden
-          img(src="/assets/zoomon.svg")
+          img(src="/assets/zoomon.png")
         div
           h2 Zoomon
           p Quick downloading platform for students

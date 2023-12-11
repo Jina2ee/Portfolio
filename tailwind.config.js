@@ -16,7 +16,7 @@ module.exports = {
         react: 'url("/assets/Icon_react.svg")',
         tailwind: 'url("/assets/Icon_tailwind.svg")',
         mail: 'url("/assets/Icon_mail.svg")',
-        dapulja: 'url("/assets/dapulja.svg")',
+        dapulja: 'url("/assets/dapulja.png")',
         zoomon: 'url("/assets/zoomon.png")',
         watcher: 'url("/assets/watcher.png")',
         portfolio: 'url("/assets/portfolio.png")',
