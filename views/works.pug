@@ -10,7 +10,7 @@ include ./layouts/header
       imgUrl: "/assets/imomtae.png",
       service_detail: "Children's Mental Health Platform",
       service_active: true,
-      role_describe: "Managing projects and colleagues, collaborating with outsourcing companies as a technical project manager.",
+      role_describe: "Managing project and collaborating with outsourcing companies as a technical project manager.",
       skills: []
     },
     {
@@ -125,12 +125,12 @@ block content
                 img.w-full.h-full.object-cover(src=work.imgUrl class=work.service_active ? 'grayscale-0' : 'grayscale')
           div.p-2
             h2.title.text-xl=work.name
-            p.flex.grow.text-xs.leading-4(class="min-h-[4rem]")=work.service_detail
-            p.flex.grow.text-xs.leading-4.my-1.p-2.italic.text-primary.underline.decoration-solid(class="min-h-[4rem]")=`"${work.role_describe}"`
-            div.h-14(class="md:h-8")
+            p.flex.text-xs.leading-4.overflow-y-auto(class="min-h-[4rem]")=work.service_detail
+            p.flex.text-xs.leading-4.my-1.p-2.italic.text-primary.underline.decoration-solid.overflow-y-auto(class="min-h-[4rem]")=`"${work.role_describe}"`
+            div.h-14.overflow-y-auto(class="md:h-8")
               div.flex.flex-wrap.gap-1
                 for skill in work.skills 
-                  span(class="border-emerald-400 border rounded-xl text-emerald-600 text-xs font-medium me-2 px-2.5 py-0.5 rounded")=skill
+                  span.border-emerald-400.border.rounded-xl.text-emerald-600.text-xs.font-md(class="px-2.5 py-0.5")=skill
             div.flex.flex-row-reverse.text-gray-500
               span.text-xs=work.company
 
