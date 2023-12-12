@@ -1,151 +1,137 @@
 include ./layouts/layout
 include ./layouts/header
 
-//- TODO main 여백 맞추기
-//- TODO 이미지가 백그라운드로 들어가서 어떤 이미지가 들어가도 사이즈가 동일하게끔
-//- TODO 배포 
-
 - 
   var works = [
     {
-      name: 'Dapulja',
+      name: 'Imomtae',
+      url:"https://landing.imomtae.com/",
       company: '@Insighter',
-      src: "/assets/dapulja.png",
-      desc: "Quick downloading platform for students",
-      skills: ["typescript", "nextjs"]
+      imgUrl: "/assets/imomtae.png",
+      service_detail: "Children's Mental Health Platform",
+      service_active: true,
+      role_describe: "Managing projects and colleagues, collaborating with outsourcing companies as a technical project manager.",
+      skills: []
     },
     {
       name: 'Zoomon',
+      url:"",
       company: '@Insighter',
-      src: "/assets/zoomon.png",
-      desc: "Introducing Zoomon, the newly released NFT character on Insighter",
-      skills: ["pug"]
+      imgUrl: "/assets/zoomon.png",
+      service_detail: "Introducing Zoomon, the newly released NFT character on Insighter",
+      service_active: false,
+      role_describe: "Leading a team in creating websites, managing colleagues, and overseeing projects as a team leader",
+      skills: ["typescript", "pug", "tailwindcss"]
+    },
+    {
+      name: 'Dapulja',
+      url:"",
+      company: '@Insighter',
+      imgUrl: "/assets/dapulja.png",
+      service_detail: "Quick exam downloading platform for students",
+      service_active: false,
+      role_describe: "Emphasis on logic and overall project setup",
+      skills: ["typescript", "next", "tailwindcss"]
     },
     {
       name: 'Watcher',
+      url:"",
       company: '@Insighter',
-      src: "/assets/watcher.PNG",
-      desc: "Employee Attendance Management System",
-      skills: ["svelte"]
+      imgUrl: "/assets/watcher.PNG",
+      service_detail: "Employee Attendance Management System",
+      role_describe: "Emphasis on logic", 
+      service_active: false,
+      skills: ["svelte", "tailwindcss"]
     },
     {
       name: 'Portfolio',
+      url:"/index.html",
       company: '@Personal',
-      src: "/assets/portfolio.png",
-      desc: "Introducing myself",
-      skills: ["pug"]
-    },
-    {
-      name: 'Todolist',
-      company: '@Personal',
-      src: "/assets/todolist.png",
-      desc: "Making todolist page",
-      skills: ["javascript", "css", "html"]
-    },
-    {
-      name: 'Kakaobank',
-      company: '@Kakaobank',
-      src: "/assets/kakaobank.png",
-      desc: "Practice site by Kakaobank's design and functionality.",
-      skills: ["javascript", "css", "html"]
+      imgUrl: "/assets/portfolio.png",
+      service_detail: "Introducing myself",
+      service_active: true,
+      role_describe: "Emphasis on framework, css",
+      skills: ["pug", "tailwindcss"]
     },
     {
       name: 'Casetify',
+      url:'/assets/works/Casetify/index.html',
       company: '@Casetify',
-      src: "/assets/casetify.png",
-      desc: "Practice site by Casetify's design and functionality.",
+      imgUrl: "/assets/casetify.png",
+      service_detail: "Practice site by Casetify's design and functionality with responsive web design",
+      service_active: true,
+      role_describe: "Emphasis on js, css, html",
+      skills: ["javascript", "css", "html"]
+    },
+    {
+      name: 'Todolist',
+      url:'/assets/works/Todolist/index.html',
+      company: '@Personal',
+      imgUrl: "/assets/todolist.png",
+      service_detail: "Making todolist page without responsive web design",
+      service_active: true,
+      role_describe: "Emphasis on js, css, html",
       skills: ["javascript", "css", "html"]
     },
     {
       name: 'Microsoft',
+      url:'/assets/works/Microsoft/index.html',
       company: '@Microsoft',
-      src: "/assets/microsoft.png",
-      desc: "Practice site by Microsoft's design and functionality.",
+      imgUrl: "/assets/microsoft.png",
+      service_detail: "Practice site by Microsoft's design and functionality with responsive web design",
+      service_active: true,
+      role_describe: "Emphasis on js, css, html",
+      skills: ["javascript", "css", "html"]
+    },
+    {
+      name: 'Kakaobank',
+      url:'/assets/works/Kakaobank/index.html',
+      company: '@Kakaobank',
+      imgUrl: "/assets/kakaobank.png",
+      service_detail: "Practice site by Kakaobank's design and functionality without responsive web design.",
+      service_active: true,
+      role_describe: "Emphasis on js, css, html",
       skills: ["javascript", "css", "html"]
     },
     {
       name: 'Huge',
+      url:'/assets/works/Huge/index.html',
       company: '@Huge',
-      src: "/assets/huge.png",
-      desc: "Practice site by Huge's design and functionality.",
+      imgUrl: "/assets/huge.png",
+      service_detail: "Practice site by Huge's design and functionality.",
+      service_active: true,
+      role_describe: "Emphasis on js, css, html",
       skills: ["javascript", "css", "html"]
     },
 
   ]
 
-
+block headScript
+  each work in works
+    link(rel="preload" as="image" href=work.imgUrl)
 
 block content
   +header(true, "works")
   main.container.mx-auto.my-2.p-4
-    ul.grid.gap-3.grid-cols-2.grid-rows-3(class="md:grid-cols-2 lg:grid-cols-3")
+    ul.grid.grid-cols-2.gap-3(class="md:grid-cols-2 lg:grid-cols-3")
       for work in works
-        li.grid.bg-secondary.rounded-lg.border-2.border-slate-200.overflow-hidden(style="grid-auto-rows: minmax(150px, auto)")
-          div.overflow-hidden
-            - 
-              function checkToEnterTheSite(name){
-                var demoSites = ["Casetify", "Microsoft", "Kakaobank", "Huge", "Todolist"]
-                var result= false;
-                demoSites.forEach(demo => {
-                  if(demo === name){
-                    result = true 
-                  }
-                })
-                return result
-              }
-            - var canMovingToSite = checkToEnterTheSite(work.name) 
-              if canMovingToSite
-                a(href=`/assets/works/${work.name}/index.html`)
-                  img.w-full.my-0.mx-auto(src=work.src)
-                //- div.w-full.h-full.bg-cover.bg-no-repeat.bg-center(href=`/assets/works/${work.name}/index.html` class=`bg-${work.name.toLowerCase()}`)
-              else
-                img.w-full.my-0.mx-auto(src=work.src)
+        li.flex.flex-wrap.flex-col.bg-secondary.rounded-lg.border-2.border-slate-200.overflow-hidden
+          div
+            if work.service_active
+              a.block.w-full.h-24(href=work.url target='_blank' class="md:h-40 lg:h-48")
+                img.w-full.h-full.object-cover(src=work.imgUrl class=work.service_active ? 'grayscale-0' : 'grayscale')
+            else
+              div.w-full.h-24(class="md:h-40 lg:h-48")
+                img.w-full.h-full.object-cover(src=work.imgUrl class=work.service_active ? 'grayscale-0' : 'grayscale')
           div.p-2
             h2.title.text-xl=work.name
-            p.text-xs.leading-4=work.desc
-            div.text-right.text-gray-500
+            p.flex.grow.text-xs.leading-4(class="min-h-[4rem]")=work.service_detail
+            p.flex.grow.text-xs.leading-4.my-1.p-2.italic.text-primary.underline.decoration-solid(class="min-h-[4rem]")=`"${work.role_describe}"`
+            div.h-14(class="md:h-8")
+              div.flex.flex-wrap.gap-1
+                for skill in work.skills 
+                  span(class="border-emerald-400 border rounded-xl text-emerald-600 text-xs font-medium me-2 px-2.5 py-0.5 rounded")=skill
+            div.flex.flex-row-reverse.text-gray-500
               span.text-xs=work.company
-            div.flex.flex-inline.gap-2
-              for skill in work.skills 
-                img.h-8(src=`/assets/Icon_${skill}.svg` alt=skill)
 
-    
-    
-//- block content
-  main.container.mx-auto.my-2.p-2
-    ul.grid.gap-3.grid-cols-2(class="lg:grid-cols-3")
-      li.bg-secondary.rounded-lg.border-2.border-slate-200.overflow-hidden
-        div.overflow-hidden
-          img(src="/assets/dapulja.png")
-        div
-          h2 Dapulja
-          p Quick downloading platform for students
-          span @Insighter
-          div.flex.flex-inline.gap-2
-            div.w-8.h-8.rounded-full.bg-typescript.bg-contain.bg-no-repeat.bg-center
-            div.w-8.h-8.rounded-full.bg-next.bg-contain.bg-no-repeat.bg-center
-      li.bg-secondary.rounded-lg.border-2.border-slate-200.overflow-hidden(class="h-80")
-        div.h-44.overflow-hidden
-          img(src="/assets/zoomon.png")
-        div
-          h2 Zoomon
-          p Quick downloading platform for students
-          span @Insighter
-          div.flex.flex-inline.gap-2
-            div.w-8.h-8.rounded-full.bg-pug.bg-contain.bg-no-repeat.bg-center
-      li.bg-secondary.rounded-lg.border-2.border-slate-200.overflow-hidden(class="h-80")
-        div.h-44.overflow-hidden
-          img(src="/assets/watcher.png")
-        div
-          h2 watcher
-          p Quick downloading platform for students
-          span @Insighter
-          div.flex.flex-inline.gap-2
-            div.w-8.h-8.rounded-full.bg-svelte.bg-contain.bg-no-repeat.bg-center
-      li.h-96.bg-amber-900.rounded-md 03
-      li.h-96.bg-amber-900.rounded-md 04
-      li.h-96.bg-amber-900.rounded-md 05
-      li.h-96.bg-amber-900.rounded-md 06
 
-    
-    
