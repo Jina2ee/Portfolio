@@ -1,6 +1,9 @@
 include ./layouts/layout
 include ./layouts/header
 
+block headScript
+  link(rel="preload" as="image" href="/assets/main.png")
+  
 block content
   +header(false, "home")
   main#root.grid.grid-col-6.gap-1.bg-primary.bg-center.bg-cover.bg-main.bg-no-repeat.h-screen.text-white.items-center.p-2
