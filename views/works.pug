@@ -118,13 +118,17 @@ block content
         li.flex.flex-wrap.flex-col.bg-secondary.rounded-lg.border.border-slate-200.overflow-hidden
           div
             if work.service_active
-              a.block.w-full.h-24(href=work.url target='_blank' class="md:h-40 lg:h-48")
-                img.w-full.h-full.object-cover(src=work.imgUrl class=work.service_active ? 'grayscale-0' : 'grayscale')
+              a.block.w-full.h-24.rounded-t-lg(href=work.url target='_blank' class="md:h-40 lg:h-48")
+                img.w-full.h-full.object-cover(src=work.imgUrl)
             else
               div.w-full.h-24(class="md:h-40 lg:h-48")
-                img.w-full.h-full.object-cover(src=work.imgUrl class=work.service_active ? 'grayscale-0' : 'grayscale')
-          div.p-2
-            h2.title.text-xl=work.name
+                img.w-full.h-full.object-cover(src=work.imgUrl)
+          div.p-2.relative
+            div.flex.justify-between.items-center
+              h2.title.text-xl=work.name
+              if work.service_active
+                a(href=work.url target='_blank')
+                  img(src="/assets/Icon_open_in_browser.svg" alt="This is the icon to enter the website") 
             p.flex.text-xs.leading-4.overflow-y-auto(class="min-h-[4rem]")=work.service_detail
             p.flex.text-xs.leading-4.my-1.py-2.italic.text-primary.underline.decoration-solid.overflow-y-auto(class="min-h-[4rem]")=`"${work.role_describe}"`
             div.h-14.overflow-y-auto(class="md:h-8")
@@ -133,5 +137,3 @@ block content
                   span.border-emerald-400.border.rounded-xl.text-emerald-600(class="text-[10px] px-2.5 py-0.5 md:text-xs")=skill
             div.flex.flex-row-reverse.text-gray-500
               span.text-xs=work.company
-
-
