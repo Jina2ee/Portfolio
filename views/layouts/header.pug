@@ -1,12 +1,12 @@
 mixin header(isHeader, page)
   if isHeader
     div
-      header.flex.w-screen.items-center.bg-secondary
-        div.p-2.container.flex.mx-auto.justify-between.items-center.border-b-2.border-slate-200
+      header.flex.w-screen.items-center.bg-primary
+        div.px-4.py-2.container.flex.mx-auto.justify-between.items-center
           a.w-8.h-8(href="/" class="md:w-10 md:h-10")
             img.mx-auto.my-0(src="/assets/main.png" alt="main profile image" class="hover:grayscale-0")
           div.flex.gap-2
             - var navList = ["works", "about"]
                each item in navList 
-                - var currentNavigationStyle = item === page ? 'text-primary' : 'hover:text-primary'
+                - var currentNavigationStyle = item === page ? 'text-white' : 'hover:text-white'
                   a.link-text.text-sm(class=`${currentNavigationStyle} md:text-xl` href=`/${item}.html`)=item
