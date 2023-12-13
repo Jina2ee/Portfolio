@@ -130,7 +130,7 @@ block content
                 a(href=work.url target='_blank')
                   img(src="/assets/Icon_open_in_browser.svg" alt="This is the icon to enter the website") 
             p.flex.text-xs.leading-4.overflow-y-auto(class="min-h-[4rem]")=work.service_detail
-            p.flex.text-xs.leading-4.my-1.py-2.italic.text-primary.underline.decoration-solid.overflow-y-auto(class="min-h-[4rem]")=`"${work.role_describe}"`
+            p.flex.leading-4.py-2.italic.text-primary.underline.decoration-solid.overflow-y-auto(class="text-[10px] md:my-1 md:text-xs min-h-[4rem]")=`"${work.role_describe}"`
             div.h-14.overflow-y-auto(class="md:h-8")
               div.flex.flex-wrap.gap-1
                 for skill in work.skills 
