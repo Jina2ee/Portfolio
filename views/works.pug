@@ -115,7 +115,7 @@ block content
   main.container.mx-auto.my-2.p-4
     ul.grid.grid-cols-2.gap-3(class="md:grid-cols-2 lg:grid-cols-3")
       for work in works
-        li.flex.flex-wrap.flex-col.bg-secondary.rounded-lg.border-2.border-slate-200.overflow-hidden
+        li.flex.flex-wrap.flex-col.bg-secondary.rounded-lg.border.border-slate-200.overflow-hidden
           div
             if work.service_active
               a.block.w-full.h-24(href=work.url target='_blank' class="md:h-40 lg:h-48")
@@ -126,7 +126,7 @@ block content
           div.p-2
             h2.title.text-xl=work.name
             p.flex.text-xs.leading-4.overflow-y-auto(class="min-h-[4rem]")=work.service_detail
-            p.flex.text-xs.leading-4.my-1.p-2.italic.text-primary.underline.decoration-solid.overflow-y-auto(class="min-h-[4rem]")=`"${work.role_describe}"`
+            p.flex.text-xs.leading-4.my-1.py-2.italic.text-primary.underline.decoration-solid.overflow-y-auto(class="min-h-[4rem]")=`"${work.role_describe}"`
             div.h-14.overflow-y-auto(class="md:h-8")
               div.flex.flex-wrap.gap-1
                 for skill in work.skills 
