@@ -130,7 +130,7 @@ block content
             div.h-14.overflow-y-auto(class="md:h-8")
               div.flex.flex-wrap.gap-1
                 for skill in work.skills 
-                  span.border-emerald-400.border.rounded-xl.text-emerald-600.text-xs.font-md(class="px-2.5 py-0.5")=skill
+                  span.border-emerald-400.border.rounded-xl.text-emerald-600(class="text-[10px] px-2.5 py-0.5 md:text-xs")=skill
             div.flex.flex-row-reverse.text-gray-500
               span.text-xs=work.company
 
