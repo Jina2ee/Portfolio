@@ -13,20 +13,14 @@
   font-family: 'Notable', sans-serif;
 }
 
-.lg {
-  padding-right: 4.5rem;
-  padding-left: 4.5rem;
-}
-
 @media (min-width: 768px) {
-  .container {
+  .wrapper-white-space {
     padding-right: 2.5rem;
     padding-left: 2.5rem;
   }
 }
 @media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
+  .wrapper-white-space {
     padding-right: 4.5rem;
     padding-left: 4.5rem;
   }
