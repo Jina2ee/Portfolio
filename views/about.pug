@@ -1,15 +1,16 @@
 include ./layouts/layout
 include ./layouts/header
+include ./layouts/footer
 
 block content
   +header(true, "about")
   - var introducingMySelfContents = ["Hello, my name is Jina, and I'm from South Korea. I stayed in Bournemouth for six months and then moved to London. Previously, I worked as a front-end developer for 2 years and 7 months in Korea.","During my time in this role, we regularly discussed the main points of our projects and collectively decided on the appropriate libraries or frameworks to use. This experience taught me how to effectively gather opinions. Additionally, we often had to quickly acquire new skills, and I gained more experience than other junior developers as a result.", "After a year and a half, I was promoted to a team leader position. Before leaving the job, I was responsible for liaising with outsourcing companies and managing colleagues.", "Now, I am seeking new challenges in the UK. Although adjusting to a new environment can be challenging, I believe that these challenges make me stronger."]
-  main.container.mx-auto.my-2.p-4
+  main.container.wrapper-white-space.mx-auto.my-2.p-4
     div 
-      div.text-right.flex.flex-inline.items-center.gap-2.justify-end
+      div.flex.flex-inline.items-center.justify-end.text-right.gap-2
         div.w-6.h-6.bg-mail.bg-contain.bg-no-repeat.bg-center(class="md:w-8")
         strong.text-xs spzn02@gmail.com
-      h2.mt-4.mb-2.title.text-primary.text-4xl.text-center.font-bold Optimistic, Quick-witted, Responsible
+      h2.title.mt-4.mb-2.text-primary.text-4xl.text-center.font-bold Optimistic, Quick-witted, Responsible
       div.pb-2.px-4.text-center.text-base
         each content in introducingMySelfContents
           p.py-1=content
@@ -18,3 +19,4 @@ block content
         div.flex.flex-wrap.gap-1
           for skill in ["svelte", "next", "pug", "typescript", "tailwind css", "html", "css", "javascript"]
             span.text-primary.text-sm=`${skill} /`
+    +footer(false, "sm:fixed bottom-6 left-0 right-0")

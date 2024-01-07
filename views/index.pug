@@ -1,5 +1,6 @@
 include ./layouts/layout
 include ./layouts/header
+include ./layouts/footer
 
 block headScript
   link(rel="preload" as="image" href="/assets/main.png")
@@ -7,13 +8,13 @@ block headScript
   
 block content
   +header(false, "home")
-  main#root.grid.grid-col-6.gap-1.bg-primary.bg-center.bg-cover.bg-main.bg-no-repeat.h-screen.text-white.items-center.p-2
+  main#root.grid.grid-col-6.h-screen.p-2.text-white.items-center.bg-primary.bg-center.bg-cover.bg-main.bg-no-repeat.gap-1
     div
-    div.img-container.row-span-2
+    div.row-span-2
       img.max-w-sm.mx-auto.my-0(src="/assets/main.png" alt="main profile image" class="w-1/2")
     h1.title.text-5xl.text-center(class="lg:text-6xl") JINA LEE
     strong.text-center.font-light Front-end web developer
     div.mx-auto.my-0
       a(href="/works.html" class="hover:text-black hover:border-b-black").link-text.border-b.p-2.m-2 WORKS
       a(href="/about.html" class="hover:text-black hover:border-b-black").link-text.border-b.p-2.m-2 ABOUT
-    span.text-center.italic.font-extralight.text-gray-300.text-xs(class="lg:text-[0.2rem]") This website serves as a personal portfolio and is not intended for commercial purposes. 
+    +footer(true)

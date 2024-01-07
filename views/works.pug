@@ -1,5 +1,6 @@
 include ./layouts/layout
 include ./layouts/header
+include ./layouts/footer
 
 - 
   var works = [
@@ -112,7 +113,7 @@ block headScript
 
 block content
   +header(true, "works")
-  main.container.mx-auto.my-2.p-4
+  main.container.wrapper-white-space.mx-auto.my-2.p-4
     ul.grid.grid-cols-2.gap-3(class="md:grid-cols-2 lg:grid-cols-3")
       for work in works
         li.flex.flex-wrap.flex-col.bg-secondary.rounded-lg.border.border-slate-200.overflow-hidden
@@ -123,7 +124,7 @@ block content
             else
               div.w-full.h-24(class="md:h-40 lg:h-48")
                 img.w-full.h-full.object-cover(src=work.imgUrl)
-          div.p-2.relative
+          div.relative.p-2
             div.flex.justify-between.items-center
               h2.title.text-xl=work.name
               if work.service_active
@@ -137,3 +138,4 @@ block content
                   span.border-emerald-400.border.rounded-xl.text-emerald-600(class="text-[10px] px-2.5 py-0.5 md:text-xs")=skill
             div.flex.flex-row-reverse.text-gray-500
               span.text-xs=work.company
+    +footer(false)
