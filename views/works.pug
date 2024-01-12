@@ -5,6 +5,16 @@ include ./layouts/footer
 - 
   var works = [
     {
+      name: 'Jwitter',
+      url:"https://jwitter-reloaded-35149.firebaseapp.com/",
+      company: '@Personal',
+      imgUrl: "/assets/jwitter.png",
+      service_detail: "Work in progress /Social media platform project based on 'X'",
+      service_active: true,
+      role_describe: "Emphasis on logic, style and overall project setup",
+      skills: ["react", "firebase", "typescript"]
+    },
+    {
       name: 'Imomtae',
       url:"https://landing.imomtae.com/",
       company: '@Insighter',
@@ -145,7 +155,7 @@ block content
             div.h-14.overflow-y-auto(class="md:h-8")
               div.flex.flex-wrap.gap-1
                 for skill in work.skills 
-                  span.border-emerald-400.border.rounded-xl.text-emerald-600(class="text-[10px] px-2.5 py-0.5 md:text-xs")=skill
+                  span.border-emerald-400.border.rounded-xl.text-emerald-600(class="text-[10px] px-2.5 py-0.5 md:text-xs")=skill.toUpperCase()
             div.flex.flex-row-reverse.text-gray-500
               span.text-xs=work.company
     +footer(false)
