@@ -136,7 +136,7 @@ block content
   main.container.wrapper-white-space.mx-auto.my-2.p-4
     ul.grid.grid-cols-2.gap-3(class="md:grid-cols-2 lg:grid-cols-3")
       for work in works
-        li.flex.flex-wrap.flex-col.bg-secondary.rounded-lg.border.border-slate-200.overflow-hidden
+        li.flex.flex-wrap.flex-col.bg-secondary.rounded-lg.border.border-slate-200.overflow-hidden.h-full
           div
             if work.service_active
               a.block.w-full.h-24.rounded-t-lg(href=work.url target='_blank' class="md:h-40 lg:h-48")
@@ -144,7 +144,7 @@ block content
             else
               div.w-full.h-24(class="md:h-40 lg:h-48")
                 img.w-full.h-full.object-cover(src=work.imgUrl)
-          div.relative.p-2
+          div.relative.flex.flex-col.flex-1-0-auto.p-2
             div.flex.justify-between.items-center
               h2.title.text-xl=work.name
               if work.service_active
@@ -156,6 +156,6 @@ block content
               div.flex.flex-wrap.gap-1
                 for skill in work.skills 
                   span.border-emerald-400.border.rounded-xl.text-emerald-600(class="text-[10px] px-2.5 py-0.5 md:text-xs")=skill.toUpperCase()
-            div.flex.flex-row-reverse.text-gray-500
+            div.flex.flex-row-reverse.flex-1-0-auto.items-end.text-gray-500
               span.text-xs=work.company
     +footer(false)
